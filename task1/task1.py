@@ -1,7 +1,7 @@
-def palindrom(s):
+def is_palindrom(s):
     if s==s[::-1]:
-        print('Palindrom')
+        return True
     else:
-        print("Not palindrom")
+        return False
 s='tenet'
-palindrom(s)
+print(is_palindrom(s))

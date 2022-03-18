@@ -1,13 +1,12 @@
-a='apple'
-b='bed'
-c='clever city cat'
-d='directory'
-lst=[a,b,c,d]
-z1=lambda x:( x.find(' ') ==-1)#method returns True if the string has space
-z2=lambda x:( not x.startswith('a'))#method returns True if the string starts with 'a'
-z3=lambda x:( len(x) >= 5)#method returns True if lenght of string less 5
-def func_with_lambda(z,lst):
-    newlist = list(filter(z,lst)) # new list
-    return newlist
-newlist=func_with_lambda(z1,lst)
+word1='apple'
+word2='bed'
+word3='clever city cat'
+word4='directory'
+lst=[word1,word2,word3,word4]
+string_with_space=lambda x:( x.find(' ') ==-1)#method returns True if the string has space
+string_with_a_in_start=lambda x:( not x.startswith('a'))#method returns True if the string starts with 'a'
+lenght_less_five=lambda x:( len(x) >= 5)#method returns True if lenght of string less 5
+def func_for_filter_list(rule,lst):
+    return list(filter(rule,lst)) # new list
+newlist=func_for_filter_list(string_with_space,lst)
 print(newlist)

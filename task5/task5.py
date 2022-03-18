@@ -8,19 +8,27 @@ def time_of_function(function):
         return res
     return wrapped
 
-#@time_of_function
-def func(first, second):
-    print(first+second)
-    return (first+second)
+def read_file(name):
+    x = open(name, 'r')
+    a = int(x.readline())
+    b = int(x.readline(2))
+    return a,b
+
+def write_file(name,data):
+    f = open(name, 'w')  # открытие в режиме записи
+    f.write(str(data))
 
 @time_of_function
-def func2(name1,name2):
-    x = open(name1, 'r')
-    a=int(x.readline())
-    b = int(x.readline(2))
-    c=a+b
-    f = open(name2, 'w')  # открытие в режиме записи
-    f.write(str(c))
-    return c
-#func(2, 3)
-func2('input','output')
+def summa_and_print(first, second):
+    summa=first+second
+    print(summa)
+    return(summa)
+@time_of_function
+def read_summa_and_write(file_for_digitals,file_for_summa):
+    a,b=read_file(file_for_digitals)
+    summa=a+b
+    write_file(file_for_summa,summa)
+    return summa
+
+summa_and_print(2, 3)
+#read_summa_and_write('input','output')
