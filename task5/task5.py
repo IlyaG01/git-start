@@ -17,18 +17,25 @@ def read_file(name):
 def write_file(name,data):
     f = open(name, 'w')  # открытие в режиме записи
     f.write(str(data))
+def print_sum(sum):
+    print(sum)
+def sum(first,second):
+    total=first+second
+    return total
+
 
 @time_of_function
-def summa_and_print(first, second):
-    summa=first+second
-    print(summa)
-    return(summa)
+def sum_and_print(first, second):
+    total=sum(first,second)
+    print_sum(total)
+    return(total)
+
 @time_of_function
-def read_summa_and_write(file_for_digitals,file_for_summa):
+def read_sum_and_write(file_for_digitals,file_for_sum):
     a,b=read_file(file_for_digitals)
-    summa=a+b
-    write_file(file_for_summa,summa)
-    return summa
+    total=sum(a,b)
+    write_file(file_for_sum,total)
+    return sum
 
-summa_and_print(2, 3)
-#read_summa_and_write('input','output')
+#sum_and_print(2, 3)
+read_sum_and_write('input','output')

@@ -13,8 +13,8 @@ class Human(ABC):
     def get_scholarship(self):
         pass
 
-    def scholarship_compare(self, other_person):#функция возвращает True, если стипендия self меньше другого
-        return self._scholarship < other_person
+    def scholarship_compare(self, other_person_scholarship):#функция возвращает True, если стипендия self меньше другого
+        return self._scholarship < other_person_scholarship
 
 class Student(Human):
     GREAT_SCHOLARSHIP=6000
